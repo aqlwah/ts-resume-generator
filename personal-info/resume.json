@@ -1,0 +1,66 @@
+{
+  "name": "山田　太郎",
+  "name_kana": "ﾔﾏﾀﾞ ﾀﾛｳ",
+  "birthday": {
+    "year": 1990,
+    "month": 12,
+    "day": 31
+  },
+  "postal_code": "111-1111",
+  "address": "東京都○○区□□1-1-1",
+  "address_kana": "ﾄｳｷｮｳﾄ ○○ｸ □□",
+  "phone": "000-0000-XXXX",
+  "email": "yamada@example.com",
+  "education": [
+    {
+      "order": 1,
+      "year": 2008,
+      "month": 4,
+      "detail": "○○大学 □□学部△△学科 入学"
+    },{
+      "order": 2,
+      "year": 2012,
+      "month": 3,
+      "detail": "○○大学 □□学部△△学科 卒業"
+    }
+  ],
+  "work_experience": [
+    {
+      "order": 1,
+      "year": 2012,
+      "month": 4,
+      "detail": "××商事 入社",
+      "role": "営業担当として新規の法人開拓営業を行う。"
+    },{
+      "order": 2,
+      "year": 2016,
+      "month": 8,
+      "detail": "××商事 退職"
+    },{
+      "order": 1,
+      "year": 2016,
+      "month": 9,
+      "detail": "◇◇自動車 入社",
+      "role": "営業担当として新規の法人開拓営業を行う。"
+    }
+  ],
+  "certification": [
+    {
+      "order": 1,
+      "year": 2012,
+      "month": 1,
+      "detail": "普通自動車運転免許（AT限定）　取得"
+    },{
+      "order": 2,
+      "year": 2016,
+      "month": 4,
+      "detail": "TOEICスコア750点　取得"
+    }
+  ],
+  "skills": [
+    "日本語（ネイティブレベル）",
+    "Microsoft Word",
+    "Microsoft Excel",
+    "Microsoft PowerPoint"
+  ]
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="format-detection"
+      content="telephone=ne, address=no, email=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
+      rel="stylesheet"
+    />
+    <title>履歴書</title>
+    <style>
+      @media print {
+        @page {
+          margin: 0;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "M PLUS 1p";
+      }
+      main {
+        display: flex;
+        height: 100vh;
+      }
+      h1 {
+        line-height: 40px;
+        padding-left: 1rem;
+        border-left: solid 8px royalblue;
+        border-bottom: solid 2px royalblue;
+      }
+      .personal-info {
+        flex: 1;
+        background: royalblue;
+        color: white;
+        padding: 1rem;
+      }
+      .name-wrap {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .name {
+        font-weight: bold;
+      }
+      .profile-wrap {
+        font-size: 0.8rem;
+        margin-top: 2rem;
+        line-height: 30px;
+      }
+      .address {
+        display: flex;
+        align-items: center;
+      }
+      .summary-wrap {
+        margin-top: 2rem;
+      }
+      .summary-title {
+        text-align: center;
+        font-weight: bold;
+        line-height: 3rem;
+      }
+      .summary {
+        padding: 1rem 0;
+        border-top: dashed 2px white;
+        border-bottom: dashed 2px white;
+      }
+      .main-info {
+        flex: 2;
+        padding: 1rem;
+        margin: 0 1rem;
+      }
+      .history-wrap {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        margin: 0.6rem 0;
+      }
+      .year-month {
+        font-size: 0.8rem;
+        color: dimgray;
+      }
+      .detail {
+        padding: 0 1rem;
+        border-left: solid 1px silver;
+        font-size: 0.9rem;
+      }
+      .detail-header {
+        font-weight: bold;
+      }
+      .detail-subheader {
+        color: dimgray;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 0.4rem 0;
+      }
+      .skill-name {
+        color: white;
+        background: cornflowerblue;
+        border-radius: 1rem;
+        display: inline-block;
+        padding: 0 1rem;
+      }
+      .skill-name::before {
+        content: "★ ";
+      }
+      .skill-level {
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-left: 0.5rem;
+      }
+      .material-icons {
+        margin-right: 0.5rem;
+      }
+      .material-icons.profile-icons {
+        vertical-align: -8px;
+      }
+      .material-icons.main-icons {
+        vertical-align: -4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="personal-info">
+        <section class="name-wrap">
+          <div class="name"><%= resume.name %></div>
+          <div class="name-kana"><%= resume.name_kana %></div>
+        </section>
+        <section class="profile-wrap">
+          <div class="birthday">
+            <span class="material-icons profile-icons">cake</span><%=
+            `${resume.birthday.year}/${resume.birthday.month}/${resume.birthday.day}`
+            %>
+          </div>
+          <div class="address">
+            <span class="material-icons profile-icons">home</span>
+            <span>
+              〒<%= resume.postal_code %><br />
+              <%= resume.address %>
+            </span>
+          </div>
+          <div class="phone">
+            <span class="material-icons profile-icons">phone</span><%=
+            resume.phone %>
+          </div>
+          <div class="email">
+            <span class="material-icons profile-icons">mail</span><%=
+            resume.email %>
+          </div>
+        </section>
+        <section class="summary-wrap">
+          <div class="summary-title">
+            <span class="material-icons main-icons">face</span>サマリー
+          </div>
+          <div class="summary"><%- resume.summary %></div>
+        </section>
+      </article>
+      <article class="main-info">
+        <section>
+          <h1><span class="material-icons main-icons">school</span>学歴</h1>
+          <% for (const line of resume.education) { %>
+          <div class="history-wrap">
+            <div class="year-month"><%= `${line.year}/${line.month}` %></div>
+            <div class="detail">
+              <div class="detail-header"><%= line.header %></div>
+              <div class="detail-subheader"><%= line.subheader %></div>
+              <div><%- line.detail %></div>
+            </div>
+          </div>
+          <% } %>
+        </section>
+        <section>
+          <h1><span class="material-icons main-icons">business</span>職歴</h1>
+          <% for (const line of resume.work_experience) { %>
+          <div class="history-wrap">
+            <div class="year-month"><%= `${line.year}/${line.month}` %></div>
+            <div class="detail">
+              <div class="detail-header"><%= line.header %></div>
+              <div class="detail-subheader"><%= line.subheader %></div>
+              <div><%- line.detail %></div>
+            </div>
+          </div>
+          <% } %>
+        </section>
+        <section>
+          <h1><span class="material-icons main-icons">badge</span>資格</h1>
+          <% for (const line of resume.certification) { %>
+          <div class="history-wrap">
+            <div class="year-month"><%= `${line.year}/${line.month}` %></div>
+            <div class="detail">
+              <div class="detail-header"><%= line.header %></div>
+              <div class="detail-subheader"><%= line.subheader %></div>
+              <div><%- line.detail %></div>
+            </div>
+          </div>
+          <% } %>
+        </section>
+        <section>
+          <h1>
+            <span class="material-icons main-icons">construction</span>スキル
+          </h1>
+          <ul>
+            <% for (const line of resume.skills) { %>
+            <li>
+              <span class="skill-name"><%= line.skill %></span>
+              <span class="skill-level"><%= line.level %></span>
+            </li>
+            <% } %>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

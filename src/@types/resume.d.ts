@@ -1,4 +1,17 @@
-declare module 'personal-info/resume.json' {
+export interface HistoryItem {
+  year: number;
+  month: number;
+  header: string;
+  subheader?: string;
+  detail?: string;
+}
+
+export interface Skill {
+  skill: string;
+  level: string;
+}
+
+declare module "personal-info/resume.json" {
   interface Resume {
     name: string;
     name_kana: string;
@@ -12,32 +25,11 @@ declare module 'personal-info/resume.json' {
     address_kana: string;
     phone: string;
     email: string;
-    education: [
-      {
-        order: number;
-        year: number;
-        month: number;
-        detail: string;
-      }
-    ];
-    work_experience: [
-      {
-        order: number;
-        year: number;
-        month: number;
-        detail: string;
-        role?: string;
-      }
-    ];
-    certification: [
-      {
-        order: number;
-        year: number;
-        month: number;
-        detail: string;
-      }
-    ];
-    skills: string[];
+    summary: string;
+    education: HistoryItem[];
+    work_experience: HistoryItem[];
+    certification: HistoryItem[];
+    skills: Skill[];
   }
 
   const resume: Resume;

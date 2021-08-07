@@ -11,56 +11,56 @@
   "address_kana": "ﾄｳｷｮｳﾄ ○○ｸ □□",
   "phone": "000-0000-XXXX",
   "email": "yamada@example.com",
+  "summary": "営業一筋で仕事をしてきました。\n顧客の懐に飛び込み、密にコミュニケーションを取りながら顧客の抱える問題解決のお手伝いをします。\n趣味はアウトドアです。",
   "education": [
     {
-      "order": 1,
       "year": 2008,
       "month": 4,
-      "detail": "○○大学 □□学部△△学科 入学"
+      "header": "○○大学 入学",
+      "subheader": "□□学部△△学科"
     },{
-      "order": 2,
       "year": 2012,
       "month": 3,
-      "detail": "○○大学 □□学部△△学科 卒業"
+      "header": "○○大学 卒業",
+      "subheader": "□□学部△△学科"
     }
   ],
   "work_experience": [
     {
-      "order": 1,
       "year": 2012,
       "month": 4,
-      "detail": "××商事 入社",
-      "role": "営業担当として新規の法人開拓営業を行う。"
+      "header": "××商事 入社",
+      "subheader": "営業部",
+      "detail": "2014年から人事部に異動。"
     },{
-      "order": 2,
       "year": 2016,
       "month": 8,
-      "detail": "××商事 退職"
+      "header": "××商事 退職",
+      "subheader": "人事部",
+      "detail": "一身上の都合により退職。"
     },{
-      "order": 1,
       "year": 2016,
       "month": 9,
-      "detail": "◇◇自動車 入社",
-      "role": "営業担当として新規の法人開拓営業を行う。"
+      "header": "◇◇自動車 入社",
+      "subheader": "営業部",
+      "detail": "法人向け新規開拓営業を担当。"
     }
   ],
   "certification": [
     {
-      "order": 1,
       "year": 2012,
       "month": 1,
-      "detail": "普通自動車運転免許（AT限定）　取得"
+      "header": "普通自動車運転免許（AT限定）　取得"
     },{
-      "order": 2,
       "year": 2016,
       "month": 4,
-      "detail": "TOEICスコア750点　取得"
+      "header": "TOEICスコア750点　取得"
     }
   ],
   "skills": [
-    "日本語（ネイティブレベル）",
-    "Microsoft Word",
-    "Microsoft Excel",
-    "Microsoft PowerPoint"
+    { "skill": "日本語", "level": "ネイティブレベル" },
+    { "skill": "Microsoft Word", "level": "日常的な書類作成に使用しています。" },
+    { "skill": "Microsoft Excel", "level": "一般的な関数やVBAマクロを活用できます。" },
+    { "skill": "Microsoft PowerPoint", "level": "プレゼンスライド作成のほか、図解の作成などにも使用しています。" }
   ]
 }

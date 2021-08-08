@@ -29,13 +29,24 @@ function convertToBR(): void {
   convertAll(resume.certification);
 }
 
+// プロフィール画像をbase64エンコードする(ejsにバインドするため)
+function readPhoto(): Promise<string | void> {
+  return fsp
+    .readFile("src/assets/photo.png")
+    .then((data) => data.toString("base64"))
+    .catch((err) =>
+      console.error("ERROR: can not read photo.", err.toString())
+    );
+}
+
 (async () => {
   sortOrder();
   convertToBR();
+  const photo = await readPhoto();
   // ejsファイルを読み込んでrender
   const renderedString = await fsp
     .readFile("src/template/resume.ejs.html", "utf8")
-    .then((data) => ejs.render(data, { resume: resume }))
+    .then((data) => ejs.render(data, { resume, photo }))
     .catch((err) =>
       console.error("ERROR: can not read template.", err.toString())
     );

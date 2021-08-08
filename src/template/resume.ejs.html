@@ -44,18 +44,31 @@
         background: royalblue;
         color: white;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .photo-wrap {
+        margin: 2rem;
+      }
+      .photo-wrap > img {
+        max-width: 100%;
+        object-fit: contain;
       }
       .name-wrap {
         font-size: 1.2rem;
         text-align: center;
+        width: 160px;
       }
       .name {
         font-weight: bold;
+        border-bottom: solid 1px white;
       }
       .profile-wrap {
         font-size: 0.8rem;
         margin-top: 2rem;
         line-height: 30px;
+        width: 100%;
       }
       .address {
         display: flex;
@@ -135,6 +148,12 @@
   <body>
     <main>
       <article class="personal-info">
+        <section class="photo-wrap">
+          <img
+            src="data:image/png;base64,<%= photo %>"
+            alt="プロフィール画像"
+          />
+        </section>
         <section class="name-wrap">
           <div class="name"><%= resume.name %></div>
           <div class="name-kana"><%= resume.name_kana %></div>
